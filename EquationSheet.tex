@@ -1,10 +1,16 @@
-\DocumentMetadata{tagging=on, tagging-setup={math/setup=mathml-SE},pdfstandard=ua-2,lang=en-US}
+\DocumentMetadata{
+    tagging=on,
+    tagging-setup={math/setup=mathml-SE},
+    pdfstandard=ua-2,
+    lang=en-US
+}
 
 \documentclass[10pt]{article}
 \usepackage[letterpaper, margin=0.5in]{geometry}    % Sets the Page Geometry
 \usepackage{amsmath}                              % Better Math
 \usepackage{amssymb}                              % Better Math
-\usepackage{bm}                                   % Bold Math Symbols
+\usepackage{unicode-math}
+\usepackage{titling}                              % For Typesetting the Title
 \usepackage{multicol}                             % For Column Control
 \usepackage[group-separator={}]{siunitx}                              % Type setting units
 \usepackage[pdftitle={PH 112 - Equation Sheet 1},pdfauthor={Will Waldron},pdfdisplaydoctitle]{hyperref}          % PDF title metadata
@@ -12,36 +18,35 @@
 
 % --- Commands -------------------------------------------------------------- %
 \newcommand*\mean[1]{\bar{#1}}                    % Average Bar
-\newcommand*{\bvec}[1]{\bm{\vec{#1}}}             % Bold Vector with Vec Bar
-\newcommand*{\bhat}[1]{\bm{\hat{#1}}}             % Bold Vector with Vec Bar
-\renewcommand{\d}[2]{\frac{d #1}{d #2}} % for derivatives
-\newcommand{\dd}[2]{\frac{d^2 #1}{d #2^2}} % for double derivatives
+\newcommand*{\bvec}[1]{\symbf{\vec{#1}}}          % Bold Vector (\symbf for unicode-math)
+\newcommand*{\bhat}[1]{\symbf{\hat{#1}}}          % Bold Vector Hat (\symbf for unicode-math)
+\renewcommand{\d}[2]{\frac{d #1}{d #2}}           % for derivatives
+\newcommand{\dd}[2]{\frac{d^2 #1}{d #2^2}}        % for double derivatives
 \newcommand{\dt}[1]{\d{#1}{t}}
 \newcommand{\ddt}[1]{\dd{#1}{t}}
-\newcommand{\D}[2]{\frac{\Delta #1}{\Delta #2}} % for derivatives
+\newcommand{\D}[2]{\frac{\Delta #1}{\Delta #2}}   % for derivatives
 \newcommand{\Dt}[1]{\D{#1}{t}}
 \newcommand*{\norm}[1]{\lVert#1\rVert}            % Vector Norm
 \setlength{\columnsep}{1cm}                       % Column Separation
 \setlength{\columnseprule}{0.4pt}                 % Column Divider
 
 
-% --- Tagging --------------------------------------------------------------- %
-% Tag headings directly as H1/H2 so checkers that ignore the role map see them
-\AssignStructureRole{sec/1/title}{H1}
-\AssignStructureRole{sec/2/title}{H2}
-
-
 % --- Title Information ----------------------------------------------------- %
+\setlength{\droptitle}{-4em}							% Title Height
 \title{PH 112 - Equation Sheet 1}
+\posttitle{\par\end{center}}
+\preauthor{}
 \author{}
+\postauthor{}
+\predate{}
 \date{}
+\postdate{}
 
 % --- The Document ---------------------------------------------------------- %
 \begin{document}
 
 % --- The Title ------------------------------------------------------------- %
 \maketitle
-\vspace{-0.75in}
 
 \input{EquationsRaw}
 
