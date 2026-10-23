@@ -1,19 +1,19 @@
 \DocumentMetadata{tagging=on, tagging-setup={math/setup=mathml-SE},pdfstandard=ua-2,lang=en-US}
 
 \documentclass[10pt]{article}
-\usepackage[letterpaper, margin=0.75in]{geometry}    % Sets the Page Geometry
+\usepackage[letterpaper, margin=0.5in]{geometry}    % Sets the Page Geometry
 \usepackage{amsmath}                              % Better Math
 \usepackage{amssymb}                              % Better Math
 \usepackage{bm}                                   % Bold Math Symbols
-\usepackage{titling}                              % For Typesetting the Title
 \usepackage{multicol}                             % For Column Control
 \usepackage[group-separator={}]{siunitx}                              % Type setting units
+\usepackage[pdftitle={PH 112 - Equation Sheet 1},pdfauthor={Will Waldron},pdfdisplaydoctitle]{hyperref}          % PDF title metadata
 
 
 % --- Commands -------------------------------------------------------------- %
 \newcommand*\mean[1]{\bar{#1}}                    % Average Bar
-\newcommand*{\bvec}[1]{\vec{\bm{#1}}}             % Bold Vector with Vec Bar
-\newcommand*{\bhat}[1]{\hat{\bm{#1}}}             % Bold Vector with Vec Bar
+\newcommand*{\bvec}[1]{\bm{\vec{#1}}}             % Bold Vector with Vec Bar
+\newcommand*{\bhat}[1]{\bm{\hat{#1}}}             % Bold Vector with Vec Bar
 \renewcommand{\d}[2]{\frac{d #1}{d #2}} % for derivatives
 \newcommand{\dd}[2]{\frac{d^2 #1}{d #2^2}} % for double derivatives
 \newcommand{\dt}[1]{\d{#1}{t}}
@@ -25,22 +25,23 @@
 \setlength{\columnseprule}{0.4pt}                 % Column Divider
 
 
+% --- Tagging --------------------------------------------------------------- %
+% Tag headings directly as H1/H2 so checkers that ignore the role map see them
+\AssignStructureRole{sec/1/title}{H1}
+\AssignStructureRole{sec/2/title}{H2}
+
+
 % --- Title Information ----------------------------------------------------- %
-\setlength{\droptitle}{-4em}							% Title Height
 \title{PH 112 - Equation Sheet 1}
-\posttitle{\par\end{center}}
-\preauthor{}
 \author{}
-\postauthor{}
-\predate{}
 \date{}
-\postdate{}
 
 % --- The Document ---------------------------------------------------------- %
 \begin{document}
 
 % --- The Title ------------------------------------------------------------- %
 \maketitle
+\vspace{-0.75in}
 
 \input{EquationsRaw}
 
